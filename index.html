@@ -9,4 +9,30 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    (function () {
+    function resizeEvent() {
+        // 获取根元素html
+        let html = document.documentElement;
+        //  获取宽度
+        let wd = html.clientWidth;
+        // let wd = html.getBoundingClientRect().width
+        //  进行判断
+        if (wd > 720) {
+            wd = 720
+        }
+        //  根据不同的屏幕，设置根元素的字体大小
+        // html.style.fontSize = wd * 100 / 750 + 'px';
+        html.style.fontSize = wd / 7.2 + 'px'; //100px
+    }
+    resizeEvent();
+    //  性能考虑
+    let time = null;
+    //  监听事件
+    window.addEventListener('resize', function () {
+        time && clearTimeout(time)
+        time = setTimeout(resizeEvent, 300)
+    })
+})()//括号是自执行函数的意思
+  </script>
 </html>

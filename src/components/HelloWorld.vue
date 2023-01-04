@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 style="color: blue;">{{ msg }}</h1>
+    <span style="color: blue; font-size: 0.16rem;">{{ msg }}</span>
     <h2>Essential Links</h2>
     <button @click="yulan">预览pdf</button>
     <!-- <iframe :src="'/static/pdf/web/viewer.html?file='+ url" height="560" width="100%"></iframe> -->
@@ -29,6 +29,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  width: 2rem;
+  border: 1px solid black;
+}
 h1, h2 {
   font-weight: normal;
 }
